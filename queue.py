@@ -18,7 +18,7 @@ while True:
     print("########################################")
     print("1. View list")
     print("2. Insert into the list")
-    print("3. Pop first itma on the list")
+    print("If you add any item the code will insert an item in the bottom of the array and will pop off the first item.")
     print("########################################")
     print("")
     print("")
@@ -29,10 +29,9 @@ while True:
     if enteredChoice == 1:
         viewList()
 
-    if enteredChoice == 2:
+    elif enteredChoice == 2:
         toInsert = raw_input("Enter the sentence you want to insert: ")
         push(toPush = toInsert)
-        
-    if enteredChoice == 3:
         pop()
-    
+    else:
+        print("Not a valid choice.")
