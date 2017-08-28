@@ -1,15 +1,18 @@
-queue = ["wake up","take a shower","get dressed","breakfast","Go to Office"]
+class queue_class():
+    def __init__(self):
+        self.a_queue = ["wake up","take a shower","get dressed","breakfast","Go to Office"]
+    def viewList(self):
+        for x in range(len(self.a_queue)):
+            print(self.a_queue[x])
 
-def viewList():
-    for x in range(len(queue)):
-        print(queue[x])
+    def push(self, toPush):
+        self.a_queue.append(toPush)
 
-def push(toPush):
-    queue.append(toPush)
+    def pop(self):
+        popedItem = self.a_queue.pop(0)
+        print("The removed item is: ", popedItem)
 
-def pop():
-    popedItem = queue.pop(0)
-    print("The removed item is: ", popedItem)
+queue = queue_class()
 
 while True:
 
@@ -27,11 +30,11 @@ while True:
     print("")
 
     if enteredChoice == 1:
-        viewList()
+        queue.viewList()
 
     elif enteredChoice == 2:
         toInsert = raw_input("Enter the sentence you want to insert: ")
-        push(toPush = toInsert)
-        pop()
+        queue.push(toPush = toInsert)
+        queue.pop()
     else:
         print("Not a valid choice.")
